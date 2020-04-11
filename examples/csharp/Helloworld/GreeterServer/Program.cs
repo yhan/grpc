@@ -19,7 +19,7 @@ using Helloworld;
 
 namespace GreeterServer
 {
-    class GreeterImpl : Greeter.GreeterBase
+    class GreeterImpl : MyFirst.MyFirstBase
     {
         // Server side handler of the SayHello RPC
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
@@ -36,7 +36,7 @@ namespace GreeterServer
         {
             Server server = new Server
             {
-                Services = { Greeter.BindService(new GreeterImpl()) },
+                Services = { MyFirst.BindService(new GreeterImpl()) },
                 Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
             };
             server.Start();

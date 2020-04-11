@@ -24,7 +24,7 @@ namespace GreeterClient
         {
             Channel channel = new Channel("127.0.0.1:50051", ChannelCredentials.Insecure);
 
-            var client = new Greeter.GreeterClient(channel);
+            var client = new MyFirst.MyFirstClient(channel);
             String user = "you";
 
             var reply = client.SayHello(new HelloRequest { Name = user });
